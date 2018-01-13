@@ -5,7 +5,7 @@ Typically, in the MVVM pattern, view-model classes must "subscribe" to changes f
 
 The typical "listener" function in a view-model class will look something like this:
 
-```
+```csharp
 void ReactToModelPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
 {
     //Get the name of the property that was changed on the model
@@ -32,7 +32,7 @@ void ReactToModelPropertyChanged (object sender, System.ComponentModel.PropertyC
 
 For many view-model classes, especially larger ones, this leads to long if-statements that are laborious to both create and debug. For this reason, I wrote this example project (and maybe even a framework, if I would dare to call it that?) that demonstrates how to simplify the MVVM notification procedures. Using this code, you can now declare your view-model properties like this:
 
-```
+```csharp
 [ReactToModelPropertyChanged(new string[] { "CorrespondingModelProperty" })]
 public string MyViewModelProperty
 {
